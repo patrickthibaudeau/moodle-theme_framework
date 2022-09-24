@@ -10,3 +10,7 @@ $string['choosereadme'] = 'Theme framework is a child theme of Boost.';
 $string['pluginname'] = 'Framework';
 // We need to include a lang string for each block region.
 $string['region-side-pre'] = 'Right';
+$string['configtitle'] = 'Configuration';
+$string['generalsettings'] = 'General';
+$string['redirect_url'] = 'Redirect URL';
+$string['redirect_url_desc'] = 'Enter the path where users should be redirected when they log in or click on the home link. Path must always start with forward slash. ex /path/to/your/plugin';

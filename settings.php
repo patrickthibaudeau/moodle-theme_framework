@@ -15,31 +15,28 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * A one column layout for the boost theme.
- *
  * @package   theme_boost
- * @copyright 2016 Damyon Wiese
+ * @copyright 2016 Ryan Wyllie
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$bodyattributes = $OUTPUT->body_attributes([]);
+if ($ADMIN->fulltree) {
+    $settings = new theme_boost_admin_settingspage_tabs('themesettingframework', get_string('configtitle', 'theme_framework'));
+    $page = new admin_settingpage('theme_framework_general', get_string('generalsettings', 'theme_boost'));
 
-$config = get_config('theme_framework');
+    // Background image setting.
+    $name = 'theme_framework/redirect_url';
+    $title = get_string('redirect_url', 'theme_framework');
+    $description = get_string('redirect_url_desc', 'theme_framework');
+    $setting = new admin_setting_configtext($name, $title, $description, '');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
 
-$templatecontext = [
-    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
-    'output' => $OUTPUT,
-    'bodyattributes' => $bodyattributes,
-    'redirect_url' => $config->redirect_url
-];
+    // Must add the page after definiting all the settings!
+    $settings->add($page);
 
-if (empty($PAGE->layout_options['noactivityheader'])) {
-    $header = $PAGE->activityheader;
-    $renderer = $PAGE->get_renderer('core');
-    $templatecontext['headercontent'] = $header->export_for_template($renderer);
+
 }
-
-echo $OUTPUT->render_from_template('theme_framework/columns1', $templatecontext);
 
