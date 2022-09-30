@@ -14,3 +14,5 @@ $string['configtitle'] = 'Configuration';
 $string['generalsettings'] = 'General';
 $string['redirect_url'] = 'Redirect URL';
 $string['redirect_url_desc'] = 'Enter the path where users should be redirected when they log in or click on the home link. Path must always start with forward slash. ex /path/to/your/plugin';
+$string['show_edit_mode'] = 'Show edit mode toggle switch';
+$string['show_edit_mode_desc'] = 'Show the edit mode toggle switch at the top right portion of the navbar.';

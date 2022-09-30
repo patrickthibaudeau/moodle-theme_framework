@@ -118,7 +118,8 @@ $templatecontext = [
     'overflow' => $overflow,
     'headercontent' => $headercontent,
     'addblockbutton' => $addblockbutton,
-    'redirect_url' => $config->redirect_url
+    'redirect_url' => $config->redirect_url,
+    'show_edit_mode' => $config->show_edit_mode
 ];
 
 echo $OUTPUT->render_from_template('theme_framework/drawers', $templatecontext);

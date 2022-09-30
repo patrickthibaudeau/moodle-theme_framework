@@ -34,6 +34,13 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    $name = 'theme_framework/show_edit_mode';
+    $title = get_string('show_edit_mode', 'theme_framework');
+    $description = get_string('show_edit_mode_desc', 'theme_framework');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
     // Must add the page after definiting all the settings!
     $settings->add($page);
 
