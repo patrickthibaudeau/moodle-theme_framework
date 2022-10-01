@@ -65,12 +65,7 @@
 
     <a href="{{ config.wwwroot }}{{ redirect_url }}"
        class="navbar-brand d-none d-md-flex align-items-center m-0 mr-4 p-0 aabtn">
-        {{# output.should_display_navbar_logo }}
-            <img src="{{output.get_compact_logo_url}}" class="logo mr-1" alt="{{sitename}}">
-        {{/ output.should_display_navbar_logo }}
-        {{^ output.should_display_navbar_logo }}
-            {{{ sitename }}}
-        {{/ output.should_display_navbar_logo }}
+            <img src="https://www.yorku.ca/brand/wp-content/themes/york2020/images/yorku-logo.jpg" class="logo mr-1" alt="{{sitename}}">
     </a>
     {{#primarymoremenu}}
         <div class="primary-navigation">
@@ -103,5 +98,4 @@
         {{/show_edit_mode}}
     </div>
 </nav>
-
 {{> theme_boost/primary-drawer-mobile }}

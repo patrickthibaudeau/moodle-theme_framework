@@ -55,6 +55,10 @@ $THEME->activityheaderconfig = [
     'notitle' => true
 ];
 
+$THEME->scss = function($theme) {
+    return theme_framework_get_main_scss_content($theme);
+};
+
 $THEME->layouts = [
 
 // Most backwards compatible layout without the blocks.

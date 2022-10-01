@@ -6,11 +6,13 @@
 defined('MOODLE_INTERNAL') || die();
 
 // We will add callbacks here as we add features to our theme.
-function load_all_redirects() {
+function load_all_redirects()
+{
     redirect_to_home();
 }
 
-function redirect_to_home() {
+function redirect_to_home()
+{
     global $CFG;
     $config = get_config('theme_framework');
     $current_url = $_SERVER['REQUEST_URI'];
@@ -18,4 +20,23 @@ function redirect_to_home() {
     if ($current_url == '/?redirect=0') {
         redirect($CFG->wwwroot . $config->redirect_url);
     }
+}
+
+/**
+ * Returns the main SCSS content .
+ *
+ * @param theme_config $theme The theme config object .
+ * @return string
+ */
+function theme_framework_get_main_scss_content($theme)
+{
+    global $CFG;
+
+    $scss = '';
+
+    $context = context_system::instance();
+
+    $scss .= file_get_contents($CFG->dirroot . '/theme/framework/scss/default.scss');
+
+    return $scss;
 }
