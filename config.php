@@ -68,7 +68,7 @@ $THEME->layouts = [
     ),
     // Standard layout with blocks.
     'standard' => array(
-        'file' => 'drawers.php',
+        'file' => 'container.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
     ),
