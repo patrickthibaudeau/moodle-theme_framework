@@ -42,9 +42,9 @@ $york-lassonde-teal:    #339999;
 $york-lassonde-yellow:  #ffcc00;
 
 $primary:       $york-lassonde-red !default;
-$success:       $york-schulich-green !default;
-$info:          $york-blue-light !default;
-$warning:       $york-lassonde-yellow !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $orange!default;
 $danger:        $york-red !default;
 $secondary:     $york-grey-pewter !default;
 
@@ -148,6 +148,14 @@ body {
 
     .navbar.fixed-top {
         border-bottom: $york-red 1px solid !important;
+    }
+
+    .secondary-navigation {
+        max-width: 100%;
+    }
+
+    .header-maxwidth {
+        max-width: 100%;
     }
 
     .york-red-seperator{
