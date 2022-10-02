@@ -151,9 +151,13 @@ body {
     }
 
     .york-red-seperator{
-        top: 125px;
+        margin-top: 60px;
         height: 50px;
         background-color: $york-red;
+    }
+
+    #page.drawers {
+        margin-top: 0px !important;
     }
 
     .logo {
@@ -169,7 +173,7 @@ body {
     }
 
     .odd {
-        background-color: #fff4f4 !important;
+        background-color: #fff7f7 !important;
     }
 }
 
