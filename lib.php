@@ -13,9 +13,11 @@ function load_all_redirects() {
 function redirect_to_home() {
     global $CFG;
     $config = get_config('theme_framework');
+    if ($config->redirect_url) {
     $current_url = $_SERVER['REQUEST_URI'];
 // If user clicked home page link
     if ($current_url == '/?redirect=0') {
         redirect($CFG->wwwroot . $config->redirect_url);
+    }
     }
 }
