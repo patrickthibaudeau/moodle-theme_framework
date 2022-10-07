@@ -29,7 +29,7 @@ $bodyattributes = $OUTPUT->body_attributes([]);
 $config = get_config('theme_framework');
 
 $templatecontext = [
-    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
+    'sitename' => format_string($SITE->fullname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
     'bodyattributes' => $bodyattributes,
     'redirect_url' => $config->redirect_url
